@@ -3,11 +3,9 @@
 
 using LeetCodeSolutions;
 
-var result = FizzBuzz.FizzBuzzer(15);
+var tester = new RansomNotes();
 
-foreach (var item in result)
-{
-    Console.WriteLine(item);
-}   
+var result = tester.RansomNote("aa", "aab");
 
+Console.WriteLine(result);
 Console.ReadLine();
