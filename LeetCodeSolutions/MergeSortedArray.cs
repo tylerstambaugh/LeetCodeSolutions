@@ -3,12 +3,28 @@
     public class MergeSortedArray
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)
-        {
-            for (int i = 0; i < n; i++)
+        {           
+            int leftCounter = 0, rightCounter = 0;
+
+            for (int i = 1; i < nums1.Length; i++)
             {
-                if (nums1[i] > nums2[i])
+                Console.WriteLine($"iteration = {i}");
+                if (nums1[leftCounter] <= nums2[rightCounter])
                 {
-                    nums1[i] = nums2[i];
+                    Console.WriteLine($"nums1[{leftCounter}] = {nums1[leftCounter]}");
+                    Console.WriteLine($"nums2[{rightCounter}] = {nums2[rightCounter]}");
+                    Console.WriteLine("nothing changes, incrementing left counter");
+                    leftCounter++;
+                }
+                else
+                {
+                    Console.WriteLine($"nums1[{leftCounter}] = {nums1[leftCounter]}");
+                    Console.WriteLine($"nums2[{rightCounter}] = {nums2[rightCounter]}");
+                    Console.WriteLine("Right side is smaller, taking value at right array and putting it back into sorted array. Incrementing both counters.");
+                    nums1[leftCounter + 1] = nums1[leftCounter];
+                    nums1[leftCounter] = nums2[rightCounter];
+                    rightCounter++;
+                    leftCounter++;
                 }
             }
         }
