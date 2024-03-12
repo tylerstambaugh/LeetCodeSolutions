@@ -3,9 +3,10 @@
 
 using LeetCodeSolutions;
 
-var tester = new RansomNotes();
+int[] nums1 = { 1, 2, 3, 0, 0, 0 };
+int[] nums2 = {2, 5, 6};
+int m = 3, n = 3;
 
-var result = tester.RansomNote("aa", "aab");
-
-Console.WriteLine(result);
-Console.ReadLine();
+MergeSortedArray mergeSortedArray = new MergeSortedArray();
+ 
+mergeSortedArray.Merge(nums1, m, nums2, n);
