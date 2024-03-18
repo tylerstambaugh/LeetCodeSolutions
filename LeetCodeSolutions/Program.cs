@@ -3,14 +3,13 @@
 
 using LeetCodeSolutions;
 
-int[] nums1 = { 1, 2, 3, 0, 0, 0 };
-int[] nums2 = { 2, 5, 6 };
-//int[] nums1 = { -1, 0, 0, 3, 3, 3, 0, 0, 0 };
-//int[] nums2 = {1, 2, 2};
-int m = 3, n = 3;
+int[] nums = [2, 5, 5, 11];
+int target = 10;
+Console.WriteLine(_001TwoSum.TwoSum(nums, target));
 
-MergeSortedArray mergeSortedArray = new MergeSortedArray();
- 
-mergeSortedArray.Merge4(nums1, m, nums2, n);
+Console.ReadLine();
+
+
+
 
 
