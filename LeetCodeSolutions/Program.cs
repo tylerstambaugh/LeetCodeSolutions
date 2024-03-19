@@ -3,11 +3,7 @@
 
 using LeetCodeSolutions;
 
-int[] nums = [2, 5, 5, 11];
-int target = 10;
-Console.WriteLine(_001TwoSum.TwoSum(nums, target));
-
-Console.ReadLine();
+_009PalindromeNumber.IsPalindrome(1001);
 
 
 
