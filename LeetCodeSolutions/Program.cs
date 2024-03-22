@@ -5,7 +5,9 @@ using LeetCodeSolutions;
 
 //_009PalindromeNumber.IsPalindrome(1001);
 
-Console.WriteLine(_014LongestCommonPrefix.LongestCommonPrefix(["ab", "a"]));
+//Console.WriteLine(_014LongestCommonPrefix.LongestCommonPrefix(["ab", "a"]));
+
+Console.WriteLine(_020ValidParentheses.IsValid("()"));
 
 
 
