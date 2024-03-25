@@ -15,7 +15,7 @@
             int openCurlys = -1;
             int lastOpenCurlyIndex = -1;
             int closeCurlys = -1;
-            int lastCloseCurlyIndex = -1;
+            int lastClosedCurlyIndex = -1;
 
             for (int i = 0; i < s.Length; i++)
             {
@@ -34,6 +34,7 @@
 
                 if (s[i] == '[')
                 {
+                    openBrackets++;
                     lastOpenBracketIndex = i;
                 }
 
@@ -52,18 +53,21 @@
                 if (s[i] == '}')
                 {
                     closeCurlys++;
-                    lastOpenCurlyIndex = i;
+                    lastClosedCurlyIndex = i;
 
                 }
             }
 
-            if(               
-                openParens == closedParens && 
-                openBrackets == closeBrackets &&
-                openParens == closedParens &&
-                lastOpenParenIndex < lastClosedParenIndex &&
-                lastOpenBracketIndex < lastClosedBracketIndex &&
-                lastOpenCurlyIndex < lastCloseCurlyIndex)
+            
+
+
+            if(         
+               ((openParens == -1 && closedParens == -1) || (openParens == closedParens)) &&
+                ((openBrackets == -1 && closeBrackets == -1) || (openBrackets == closeBrackets)) &&
+                ((openCurlys == -1 && closeCurlys == -1) || (openCurlys == closeCurlys)) &&
+                ((lastOpenParenIndex == -1 && lastClosedParenIndex == -1) || (lastOpenParenIndex < lastClosedParenIndex)) &&
+                ((lastOpenBracketIndex == -1 && lastClosedBracketIndex == -1) || (lastOpenBracketIndex < lastClosedBracketIndex)) &&
+                ((lastOpenCurlyIndex == -1 && lastClosedCurlyIndex == -1) || (lastOpenCurlyIndex < lastClosedCurlyIndex)))
             {
                 return true;
             }
